@@ -1,23 +1,32 @@
-import logo from './logo.svg';
+/* eslint-disable react-hooks/exhaustive-deps */
 import './App.css';
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { fetchData } from './redux/actions/productActions';
+import Home from './pages/Home';
+
+import {
+  Routes,
+  Route,
+} from "react-router-dom";
+import Details from './pages/Details';
 
 function App() {
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchData())
+  }, [])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App container">
+      <h1 className='text-info mt-4'>Fake Blogs</h1>
+      <hr></hr>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/post:id" element={<Details />} />
+      </Routes>
     </div>
   );
 }
