@@ -2,7 +2,7 @@
 import './App.css';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { fetchData } from './redux/actions/productActions';
+import { fetchData } from './redux/actions/blogActions';
 import Home from './pages/Home';
 
 import {

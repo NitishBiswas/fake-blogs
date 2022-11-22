@@ -6,7 +6,7 @@ import '../App.css'
 import { useNavigate } from 'react-router-dom'
 import { RiDeleteBin6Line } from 'react-icons/ri'
 import { useDispatch } from 'react-redux'
-import { removePost } from '../redux/actions/productActions'
+import { removePost } from '../redux/actions/blogActions'
 
 const Card = ({ post }) => {
     const navigation = useNavigate();
