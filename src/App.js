@@ -11,7 +11,7 @@ import {
 } from "react-router-dom";
 import Details from './pages/Details';
 
-function App() {
+const App = () => {
 
   const dispatch = useDispatch();
 
