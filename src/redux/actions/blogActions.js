@@ -2,7 +2,7 @@ import fakeBlog from '../../apis/fakeBlog';
 import { ActionTypes } from "../constants/action-types"
 
 export const fetchData = () => {
-    return async function (dispatch, getData) {
+    return async (dispatch, getData) => {
         const posts = await fakeBlog.get('/posts?_limit=20')
         dispatch({ type: ActionTypes.FETCH_POSTS, payload: posts.data })
         const users = await fakeBlog.get('/users')
